@@ -1,0 +1,22 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Update apt repository
+      apt:
+        update_cache: yes
+
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Copy custom index.html to Nginx root folder
+      copy:
+        src: files/index.html
+        dest: /var/www/html/index.html
+
+    - name: Ensure Nginx is started and enabled
+      service:
+        name: nginx
+        state: started
+        enabled: yes
