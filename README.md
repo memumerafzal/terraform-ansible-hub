@@ -51,6 +51,12 @@ terraform-ansible-nginx/
 
 - NOTE: COPY THE GENERATED PUBLIC IP FROM THE OUTPUT.
 
+
+- NOTE: For ansible, need to install WSL and run ubuntu. Once ubuntu up. Then go to umer@DESKTOP-6IIHAIF:/mnt/e/Portfolio.
+- To go into project directory, cd mnt/e will work, where e is drive letter.
+- https://ubuntu.com/desktop/wsl
+
+
 ######  Step 2: Configure Ansible Inventory
 - Go to the ansible/ folder.
 - Update the ansible/hosts file with the EC2 instance public IP:
