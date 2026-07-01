@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ site_title }}</title>
+  <title>{{ nginx_site_title }}</title>
   <style>
     :root { color-scheme: dark; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,8 +52,8 @@
 </head>
 <body>
   <main class="card">
-    <h1>{{ site_heading }}</h1>
-    <p class="tagline">{{ site_tagline }}</p>
+    <h1>{{ nginx_site_heading }}</h1>
+    <p class="tagline">{{ nginx_site_tagline }}</p>
     <div class="stack">
       <span class="badge tf">Terraform</span>
       <span class="badge ans">Ansible</span>
@@ -62,7 +62,7 @@
     <div class="meta">
       Served by <code>{{ ansible_hostname | default('this host') }}</code>
       &middot; Deployed {{ ansible_date_time.date | default('') }}
-      &middot; Maintained by {{ site_author }}
+      &middot; Maintained by {{ nginx_site_author }}
     </div>
   </main>
 </body>

@@ -1,9 +1,9 @@
 ---
 # Content rendered into the landing page template.
-site_title: "Terraform + Ansible Hub"
-site_heading: "🚀 Provisioned with Terraform, Configured with Ansible"
-site_tagline: "Immutable infrastructure meets idempotent configuration management."
-site_author: "Umer Afzal"
+nginx_site_title: "Terraform + Ansible Hub"
+nginx_site_heading: "🚀 Provisioned with Terraform, Configured with Ansible"
+nginx_site_tagline: "Immutable infrastructure meets idempotent configuration management."
+nginx_site_author: "Umer Afzal"
 
 nginx_service_name: nginx
-web_root: /var/www/html
+nginx_web_root: /var/www/html
