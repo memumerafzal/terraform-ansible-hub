@@ -14,6 +14,19 @@
 
 ---
 
+## ⚡ TL;DR
+
+**One command spins up a live web server on AWS — infrastructure and software fully automated, nothing done by hand.**
+
+```bash
+make deploy    # Terraform builds an EC2 server → Ansible installs Nginx → prints a live URL
+make destroy   # tears it all back down
+```
+
+- **What it does:** `make deploy` has Terraform provision the cloud infrastructure (finds the latest Ubuntu AMI, creates a firewall, generates an SSH key, launches an EC2 instance) and then hands off to Ansible, which connects in and configures Nginx to serve a styled landing page — end to end, zero manual clicking.
+- **Why it exists:** a portfolio piece proving hands-on **Infrastructure-as-Code** skill — provisioning (Terraform), configuration management (Ansible), the automatic hand-off between them, plus **CI/CD** that lints, validates, and security-scans every commit.
+- **Demoable for free:** the GitHub Actions CI validates and security-scans the code on every push **without touching AWS or costing anything** — the green checkmark *is* the demo. Add AWS keys only when you want a live site.
+
 ## 📖 Overview
 
 This project demonstrates the two halves of Infrastructure as Code working together:
