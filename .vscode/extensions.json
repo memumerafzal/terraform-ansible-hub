@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "hashicorp.terraform",
+    "redhat.ansible",
+    "redhat.vscode-yaml"
+  ]
+}

@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  role_name: nginx
+  author: Umer Afzal
+  description: Install and configure Nginx to serve a static landing page.
+  license: MIT
+  min_ansible_version: "2.14"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - jammy
+  galaxy_tags:
+    - web
+    - nginx
+
+dependencies: []
