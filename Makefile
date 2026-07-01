@@ -2,7 +2,7 @@
 TF_DIR      := terraform
 ANSIBLE_DIR := ansible
 
-.PHONY: help init fmt validate lint plan apply configure deploy destroy clean
+.PHONY: help init fmt validate lint ci plan apply configure deploy destroy clean
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -19,6 +19,14 @@ validate: ## Validate Terraform
 
 lint: ## Lint Terraform and Ansible
 	cd $(TF_DIR) && tflint --recursive
+	cd $(ANSIBLE_DIR) && ansible-lint
+
+ci: ## Run the exact GitHub Actions CI checks locally
+	cd $(TF_DIR) && terraform fmt -check -recursive
+	cd $(TF_DIR) && terraform init -backend=false && terraform validate
+	cd $(TF_DIR) && tflint --init && tflint --recursive
+	cd $(TF_DIR) && tfsec .
+	yamllint $(ANSIBLE_DIR)
 	cd $(ANSIBLE_DIR) && ansible-lint
 
 plan: ## Show Terraform plan
